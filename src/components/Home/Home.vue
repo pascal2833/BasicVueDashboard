@@ -15,18 +15,18 @@
 
       <div class="graphsInSameRowContainer">
         <mostImportant-graph
+          graphTitle="Most popular stores:"
         >
-          jijiji
         </mostImportant-graph>
         <div class="horizontal-graphs-margin"></div>
         <mostImportant-graph
+          graphTitle="Most popular gross payment stores"
         >
-          kjokoko
         </mostImportant-graph>
         <div class="horizontal-graphs-margin"></div>
         <mostImportant-graph
+          graphTitle="Most popular tags:"
         >
-          kpokfcwoperkfop
         </mostImportant-graph>
       </div>
     </div>

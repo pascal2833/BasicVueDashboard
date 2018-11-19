@@ -6,12 +6,11 @@
   flex-direction: column;
   height: calc(100vh - #{$globalVerticalMargin}*2);
   margin: $globalVerticalMargin $globalHorizontalMargin;
-  color: rgb(155,155,160);
+  color: $mainColor4Text;
   .h1-titles {
-    margin: 0;
-    font-size: 1.5em;
+    margin: 0 0 $globalVerticalMargin 0;
+    font-size: $fontSizeH1Titles;
     font-weight: normal;
-    height: $h1Height;
   }
   .horizontal-graphs-margin {
     width: $horizontalMarginBetweenGraph;

@@ -6,10 +6,9 @@
   margin: 0.8em 0.8em;
   color: #9b9ba0; }
   .home .h1-titles {
-    margin: 0;
+    margin: 0 0 0.8em 0;
     font-size: 1.5em;
-    font-weight: normal;
-    height: 5vh; }
+    font-weight: normal; }
   .home .horizontal-graphs-margin {
     width: 1em; }
   .home .graphsInSameRowContainer {

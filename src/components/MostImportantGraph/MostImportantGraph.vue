@@ -1,11 +1,15 @@
 <template>
   <div class="mostImportant-graph">
+    <h2 class="h2-titles">{{graphTitle}}</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DistributionGraph'
+  name: 'DistributionGraph',
+  props: {
+    graphTitle: String
+  }
 }
 </script>
 

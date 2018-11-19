@@ -1,14 +1,11 @@
 @import "../../assets/vars-and-mixins";
 
 .distribution-graph {
-  background-color: rgba(200,100,100,.5);
   width: $distribution-graph-width;
   position: relative;
   border: $graphs-borders;
   height: $distribution-graph-height;
   .h2-titles {
-    margin: $verticalMarginH2Titles 0;
-    font-size: 1.3em;
-    font-weight: normal;
+    @include h2-titles;
   }
 }

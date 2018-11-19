@@ -1,8 +1,11 @@
 .mostImportant-graph {
-  background-color: rgba(100, 200, 100, 0.5);
   width: calc(100%/3);
-  height: calc(100vh - 50vh - 1em * 2 - 5vh);
-  border: solid 1px #646464;
+  height: calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em);
+  border: solid 1px #9b9ba0;
   margin-top: 1em; }
+  .mostImportant-graph .h2-titles {
+    margin: 0.8em 0;
+    font-size: 1.3em;
+    font-weight: normal; }
 
 /*# sourceMappingURL=MostImportantGraph.css.map */

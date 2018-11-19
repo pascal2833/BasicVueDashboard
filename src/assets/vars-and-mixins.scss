@@ -7,11 +7,15 @@ $horizontalMarginBetweenGraph: 1em;
 
 $graphPadding: 1.5em;
 
-$graphs-borders: solid 1px rgb(100,100,100);
+$mainColor4Text: rgb(155,155,160);
+
+$graphs-borders: solid 1px $mainColor4Text;
+
 
 // --------------- Others var: --------------- //
+$fontSizeH1Titles: 1.5em;
+$fontSizeH2Titles: 1.3em;
 $verticalMarginH2Titles: .8em;
-$h1Height: 5vh;
 
 // --------------- Distribution-graph var: --------------- //
 $distribution-graph-width: 50%;
@@ -19,6 +23,12 @@ $distribution-graph-height: 50vh;
 
 // --------------- MostImportant-graph var: --------------- //
 $mostImportant-graph-width: calc(100%/3);
-$mostImportant-graph-height: calc(100vh - #{$distribution-graph-height} - #{$verticalMarginBetweenGraph} * 2 - #{$h1Height});
+$mostImportant-graph-height: calc(100vh - #{$distribution-graph-height} - #{$verticalMarginBetweenGraph} - #{$globalVerticalMargin} * 3 - #{$fontSizeH1Titles});
 
 // --------------- Mixins: --------------- //
+
+@mixin h2-titles {
+  margin: $verticalMarginH2Titles 0;
+  font-size: $fontSizeH2Titles;
+  font-weight: normal;
+}

@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAEA,oBAAqB;EACnB,gBAAgB,EAAE,wBAAoB;EACtC,KAAK,ECgBqB,YAAY;EDftC,MAAM,ECgBqB,kCAA+F;EDf1H,MAAM,ECGS,iBAA0B;EDFzC,UAAU,ECHiB,GAAG",
+"mappings": "AAEA,oBAAqB;EACnB,KAAK,ECqBqB,YAAY;EDpBtC,MAAM,ECqBqB,4CAAkI;EDpB7J,MAAM,ECMS,iBAAyB;EDLxC,UAAU,ECFiB,GAAG;EDG9B,+BAAW;ICuBX,MAAM,EAAE,OAAyB;IACjC,SAAS,EAfQ,KAAK;IAgBtB,WAAW,EAAE,MAAM",
 "sources": ["MostImportantGraph.scss","../../assets/vars-and-mixins.scss"],
 "names": [],
 "file": "MostImportantGraph.css"

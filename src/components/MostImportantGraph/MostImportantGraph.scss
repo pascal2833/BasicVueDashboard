@@ -1,9 +1,11 @@
 @import "../../assets/vars-and-mixins";
 
 .mostImportant-graph {
-  background-color: rgba(100,200,100,.5);
   width: $mostImportant-graph-width;
   height: $mostImportant-graph-height;
   border: $graphs-borders;
   margin-top: $verticalMarginBetweenGraph;
+  .h2-titles {
+    @include h2-titles;
+  }
 }
