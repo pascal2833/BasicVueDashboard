@@ -1,0 +1,12 @@
+.distribution-graph {
+  background-color: rgba(200, 100, 100, 0.5);
+  width: 50%;
+  position: relative;
+  border: solid 1px #646464;
+  height: 50vh; }
+  .distribution-graph .h2-titles {
+    margin: 0.8em 0;
+    font-size: 1.3em;
+    font-weight: normal; }
+
+/*# sourceMappingURL=DistributionGraph.css.map */
