@@ -1,1 +1,24 @@
-// --------------- General : --------------- //
+// --------------- General var: --------------- //
+$globalVerticalMargin: 0.8em;
+$globalHorizontalMargin: 0.8em;
+
+$verticalMarginBetweenGraph: 1em;
+$horizontalMarginBetweenGraph: 1em;
+
+$graphPadding: 1.5em;
+
+$graphs-borders: solid 1px rgb(100,100,100);
+
+// --------------- Others var: --------------- //
+$verticalMarginH2Titles: .8em;
+$h1Height: 5vh;
+
+// --------------- Distribution-graph var: --------------- //
+$distribution-graph-width: 50%;
+$distribution-graph-height: 50vh;
+
+// --------------- MostImportant-graph var: --------------- //
+$mostImportant-graph-width: calc(100%/3);
+$mostImportant-graph-height: calc(100vh - #{$distribution-graph-height} - #{$verticalMarginBetweenGraph} * 2 - #{$h1Height});
+
+// --------------- Mixins: --------------- //
