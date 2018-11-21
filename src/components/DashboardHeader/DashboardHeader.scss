@@ -3,12 +3,13 @@
 .dashboard-header{
   display: flex;
   justify-content: space-between;
-  .h1-titles {
-    margin: 0 0 $globalVerticalMargin 0;
-    font-size: $fontSizeH1Titles;
-    font-weight: normal;
-  }
-  .classic-button {
-    @include buttons;
-  }
+}
+.dashboard-header__h1-titles {
+  margin: 0 0 $globalVerticalMargin 0;
+  font-size: $fontSizeH1Titles;
+  font-weight: normal;
+}
+
+dashboard-header__classic-button  {
+  @include buttons;
 }

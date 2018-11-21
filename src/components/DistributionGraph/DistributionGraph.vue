@@ -1,8 +1,9 @@
 <template>
   <div class="distribution-graph">
-    <h2 class="h2-titles">{{graphTitle}}</h2>
-    {{data}}
-    <svg id="idSvg"></svg>
+    <h2 class="distribution-graph__h2-titles">{{graphTitle}}</h2>
+    <div :id="idSvgContainer" class="distribution-graph__svgContainer">
+      <svg :id="idSvg" class="distribution-graph__svgContainer__svgElement"></svg>
+    </div>
   </div>
 </template>
 
@@ -15,10 +16,18 @@ export default {
   props: {
     graphTitle: String,
     idSvg: String,
-    data: Array
+    idSvgContainer: String,
+    yAxeLegend: String,
+    xAxeLegend: String,
+    data: Array,
+    colorArray4Graphs: Array
   },
   data () {
     return {
+      color4GraphAxesAndLabels: 'rgb(130,130,135)',
+      size4GraphAxesAndLabels: '1em',
+      color4TitlesAxes: 'rgb(110,110,115)',
+      size4TitlesAxes: '1.1em'
     }
   },
   computed: {
@@ -28,90 +37,60 @@ export default {
     })
   },
   methods: {
-    drawGraph (data, widthSvgContainerAndGraph) {
-      const margin = 60
-      const width = 1000 - 2 * margin
-      const height = 600 - 2 * margin
+    drawGraph (data) {
+      const widthSvg = window.document.getElementById(this.idSvgContainer).offsetWidth
+      const heightSvg = window.document.getElementById(this.idSvgContainer).offsetHeight
+      const margin = ({top: 6, right: 0, bottom: 40, left: 50})
 
       const svg = d3.select(`#${this.idSvg}`)
 
-      const chart = svg.append('g')
-        .attr('transform', `translate(${margin}, ${margin})`)
-
+      // Scales definition:
+      const xScale = d3.scaleBand()
+        .domain(data.map(d => d.xAxeData))
+        .range([margin.left, widthSvg - margin.left - margin.right])
+        .padding(0.7)
       const yScale = d3.scaleLinear()
-        .range([height, 0])
-        .domain([0, 100])
+        .domain([0, d3.max(data, d => d.yAxeData)]).nice()
+        .range([heightSvg - margin.bottom, margin.top])
 
+      // Add graph and axes:
+      svg.append('g')
+        .selectAll('rect').data(data).enter().append('rect')
+        .attr('fill', (d, index) => this.colorArray4Graphs[index])
+        .attr('x', d => xScale(d.xAxeData))
+        .attr('y', d => yScale(d.yAxeData))
+        .attr('height', d => yScale(0) - yScale(d.yAxeData))
+        .attr('width', xScale.bandwidth())
 
-      /* const data4BarChar = this.getData4BarChar(this.getDataGroupByxValue('withRowData'))
-      const data4BarCharWithFormatedData = this.getData4BarChar(this.getDataGroupByxValue('withFormatedData')) */
-      // ------ Retrieve svg canvas container and set these dimensions: -------- //
-      // const vis = d3.select(`#${this.idSvg}`)
-      // console.log(data)
-      // const heightSvgContainerAndGraph = this.getDimParameters(this.getxValueLengthMax(data), 'height') + (6 * this.getDataGroupByField().length)
-      // vis.attr('height', heightSvgContainerAndGraph)
-      // vis.attr('width', widthSvgContainerAndGraph)
-      /* // ------- Start to define basic that we will be use after / scales and legend: -------- //
-      const MARGINS = 60
-      const WIDTH = widthSvgContainerAndGraph // Same that svg canvas container
-      const HEIGHT = heightSvgContainerAndGraph
-      // ----- Define scales: ---------- //
-      const maxValue4Y = d3.max(data, d => d.yValue)
-      const minValue4Y = d3.min(data, d => d.yValue)
-      const domain4XData = this.getDomain4X4BarChar(data4BarChar)
-      const domainForxAxis = this.getDomain4X(this.getDataGroupByField())
-      const xScaleToBuildxAxis = d3.scaleBand().range([MARGINS.left, WIDTH - MARGINS.right]).domain([...domainForxAxis])
-      const xScale = d3.scaleBand().range([MARGINS.left, WIDTH - MARGINS.right]).domain([...domain4XData])
-      const yScale = d3.scaleLinear().range([HEIGHT - MARGINS.bottom, MARGINS.top]).domain([minValue4Y, maxValue4Y]).nice() // nice: CF http://d3indepth.com/scales/
-      // --------- Create axis: ------------ //
-      const xAxis = d3.axisBottom(xScaleToBuildxAxis)
-      const yAxis = d3.axisLeft(yScale)
-      // -------- Append axis to the svg container, put them where we want and add class to style them: ---------- //
-      vis.attr('transform', 'translate(0, 0)')
-      vis.append('svg:g')
-        .attr('transform', 'translate(0,' + (HEIGHT - MARGINS.bottom) + ')')
-        .attr('class', 'xAxis')
+      const xAxis = g => g
+        .attr('transform', `translate(0,${heightSvg - margin.bottom})`)
+        .call(d3.axisBottom(xScale)
+          .tickSizeOuter(0))
+      const yAxis = g => g
+        .attr('transform', `translate(${margin.left},0)`)
+        .call(d3.axisLeft(yScale))
+
+      svg.append('g')
         .call(xAxis)
-        .selectAll('text') // Put unit/xAxis vertically.
-        .style('text-anchor', 'end')
-        .attr('dx', '-.8em')
-        .attr('dy', '.15em')
-        .attr('transform', d => 'rotate(-50)')
-      vis.append('svg:g')
-        .attr('transform', 'translate(' + (MARGINS.left) + ',0)')
-        .attr('class', 'yAxis')
+        .attr('font-size', this.size4GraphAxesAndLabels)
+      svg.append('g')
         .call(yAxis)
-      // Add Bar char:
-      data4BarChar.forEach((d, i) => {
-        vis.append('rect')
-          .attr('class', 'bar_' + d.fieldToDraw)
-          .attr('id', 'bar_' + i)
-          .style('fill', () => this.color(d.fieldToDraw))
-          .attr('opacity', '0.7')
-          .attr('width', xScale.bandwidth())
-          .attr('height', HEIGHT - MARGINS.bottom - yScale(d.yValue))
-          .attr('x', xScale(d.xValue))
-          .attr('transform', 'translate(0,' + yScale(d.yValue) + ')')
-          .on('mouseover', () => {
-            d3.selectAll('rect')
-              .style('opacity', 0.3)
-            d3.select('#bar_' + i)
-              .style('opacity', 0.7)
-            vis.append('text')
-            // .text(this.returnyValueFormated(this.dataFromFormatedRowsToBuildGraph4QueryForm, i))
-              .text(this.returnyValueFormated(data4BarCharWithFormatedData, i))
-              .attr('x', xScale(d.xValue))
-              .attr('y', yScale(d.yValue) - 10)
-              .attr('class', 'textvalue')
-              .style('fill', this.color(d.fieldToDraw))
-          })
-          .on('mouseout', () => {
-            d3.selectAll('.textvalue')
-              .style('opacity', 0)
-            d3.selectAll('rect')
-              .style('opacity', 0.7)
-          })
-      }) */
+        .attr('font-size', this.size4GraphAxesAndLabels)
+
+      // Add Axes titles:
+      svg.append('text')
+        .attr('x', -(heightSvg / 2) - margin.left)
+        .attr('y', margin.bottom / 2)
+        .attr('transform', 'rotate(-90)')
+        .attr('font-size', this.size4TitlesAxes)
+        .attr('fill', this.color4TitlesAxes)
+        .text(this.yAxeLegend)
+      svg.append('text')
+        .attr('x', widthSvg / 2)
+        .attr('y', heightSvg - 3)
+        .attr('font-size', this.size4TitlesAxes)
+        .attr('fill', this.color4TitlesAxes)
+        .text(this.xAxeLegend)
     }
   },
   watch: {

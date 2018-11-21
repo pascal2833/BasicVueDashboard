@@ -3,9 +3,18 @@
   height: calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em);
   border: solid 1px #9b9ba0;
   margin-top: 1em; }
-  .mostImportant-graph .h2-titles {
-    margin: 0.8em 0;
-    font-size: 1.3em;
-    font-weight: normal; }
+
+.mostImportant-graph__h2-titles {
+  margin: 0.5em 0;
+  font-size: 1.3em;
+  font-weight: normal;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 100%;
+  text-align: center; }
+
+.mostImportant-graph__comparison-section {
+  display: flex; }
 
 /*# sourceMappingURL=MostImportantGraph.css.map */

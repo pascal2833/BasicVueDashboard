@@ -1,7 +1,7 @@
 <template>
-  <header>
-    <h1 class="h1-titles">{{mainTitle}}</h1>
-    <button class="classic-button">Refresh dashboard</button>
+  <header class="dashboard-header">
+    <h1 class="dashboard-header__h1-titles">{{mainTitle}}</h1>
+    <button class="dashboard-header__classic-button">Refresh dashboard</button>
   </header>
 </template>
 

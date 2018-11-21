@@ -5,7 +5,20 @@
   position: relative;
   border: $graphs-borders;
   height: $distribution-graph-height;
-  .h2-titles {
-    @include h2-titles;
-  }
+}
+.distribution-graph__h2-titles {
+  @include h2-titles;
+}
+
+.distribution-graph__svgContainer {
+  width: 100%;
+  position: relative;
+  // border: solid 1px red;
+  height: calc(#{$distribution-graph-height} - #{$fontSizeH2Titles} - #{$verticalMarginH2Titles} * 2 - #{$verticalMarginBetweenGraph});
+}
+
+.distribution-graph__svgContainer__svgElement {
+  width: 100%;
+  position: relative;
+  height: calc(#{$distribution-graph-height} - #{$fontSizeH2Titles} - #{$verticalMarginH2Titles} * 2 - #{$verticalMarginBetweenGraph});
 }

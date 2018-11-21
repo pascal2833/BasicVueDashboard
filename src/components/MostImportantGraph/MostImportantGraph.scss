@@ -5,7 +5,12 @@
   height: $mostImportant-graph-height;
   border: $graphs-borders;
   margin-top: $verticalMarginBetweenGraph;
-  .h2-titles {
-    @include h2-titles;
-  }
+}
+
+.mostImportant-graph__h2-titles {
+  @include h2-titles;
+}
+
+.mostImportant-graph__comparison-section {
+  display: flex;
 }
