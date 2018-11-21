@@ -5,11 +5,11 @@
   justify-content: space-between;
 }
 .dashboard-header__h1-titles {
-  margin: 0 0 $globalVerticalMargin 0;
+  margin: 0 0 $globalVerticalMargin 1em;
   font-size: $fontSizeH1Titles;
   font-weight: normal;
 }
 
-dashboard-header__classic-button  {
+.dashboard-header__classic-button  {
   @include buttons;
 }

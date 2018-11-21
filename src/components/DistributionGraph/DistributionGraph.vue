@@ -40,7 +40,7 @@ export default {
     drawGraph (data) {
       const widthSvg = window.document.getElementById(this.idSvgContainer).offsetWidth
       const heightSvg = window.document.getElementById(this.idSvgContainer).offsetHeight
-      const margin = ({top: 6, right: 0, bottom: 40, left: 50})
+      const margin = ({top: 6, right: 0, bottom: 40, left: 65})
 
       const svg = d3.select(`#${this.idSvg}`)
 
@@ -79,14 +79,14 @@ export default {
 
       // Add Axes titles:
       svg.append('text')
-        .attr('x', -(heightSvg / 2) - margin.left)
-        .attr('y', margin.bottom / 2)
+        .attr('x', -(heightSvg / 2) - margin.bottom)
+        .attr('y', margin.left / 3)
         .attr('transform', 'rotate(-90)')
         .attr('font-size', this.size4TitlesAxes)
         .attr('fill', this.color4TitlesAxes)
         .text(this.yAxeLegend)
       svg.append('text')
-        .attr('x', widthSvg / 2)
+        .attr('x', widthSvg / 2 - margin.left - margin.right)
         .attr('y', heightSvg - 3)
         .attr('font-size', this.size4TitlesAxes)
         .attr('fill', this.color4TitlesAxes)

@@ -3,19 +3,20 @@
   justify-content: space-between; }
 
 .dashboard-header__h1-titles {
-  margin: 0 0 0.8em 0;
+  margin: 0 0 0.8em 1em;
   font-size: 1.5em;
   font-weight: normal; }
 
-dashboard-header__classic-button {
+.dashboard-header__classic-button {
   color: white;
   background-color: #9b9ba0;
   padding: .5em 1.5em;
   border-radius: .3em;
-  height: 2em;
-  font-size: 1em;
+  height: 34px;
+  font-size: 1.1em;
   cursor: pointer;
   border-style: none;
-  width: 196px; }
+  width: 196px;
+  margin-right: 1em; }
 
 /*# sourceMappingURL=DashboardHeader.css.map */

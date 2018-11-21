@@ -41,9 +41,10 @@ $mostImportant-graph-height: calc(100vh - #{$distribution-graph-height} - #{$ver
   background-color: $mainColor4Text;
   padding: .5em 1.5em;
   border-radius: .3em;
-  height: 2em;
-  font-size: 1em;
+  height: 34px;
+  font-size: 1.1em;
   cursor: pointer;
   border-style: none;
   width: 196px;
+  margin-right: 1em;
 }
