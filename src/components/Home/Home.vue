@@ -72,10 +72,29 @@ export default {
     ...mapState({
       ordersDataArray: state => state.ordersDataArray,
       data4OrdersTimeDistribution: state => state.data4OrdersTimeDistribution,
-      data4OrdersPriceCategoryDistribution: state => state.data4OrdersPriceCategoryDistribution
+      data4OrdersPriceCategoryDistribution: state => state.data4OrdersPriceCategoryDistribution,
+      data4PopularStores: state => state.data4PopularStores,
+      data4PopularTags: state => state.data4PopularTags
     }),
     ...mapGetters([
+      'getData4PopularStoresOrdered'
     ])
+    /* getTagsArray: function () {
+      const tagsArray = []
+      // const tagsArrayWithoutRepetition = []
+      for (let i = 0; i < this.ordersDataArray.length; i++) {
+        for (let ii = 0; ii < this.ordersDataArray[i].tags.length; ii++) {
+          // tagsArray.push(this.ordersDataArray[i].tags[ii])
+          if (tagsArray.indexOf(this.ordersDataArray[i].tags[ii]) < 0) { // To avoid repetitions.
+            tagsArray.push(this.ordersDataArray[i].tags[ii])
+          }
+        }
+      }
+      return tagsArray.map(tag => {
+        const object = {dataName: tag, dataQuantity: 0}
+        return object
+      })
+    } */
   },
   methods: {
     ...mapMutations([
@@ -84,7 +103,9 @@ export default {
     ]),
     ...mapActions([
       'setData4OrdersTimeDistributionAction',
-      'setData4OrdersPriceCategoryDistributionAction'
+      'setData4OrdersPriceCategoryDistributionAction',
+      'setData4PopularStoresAction',
+      'setData4PopularTagsAction'
     ])
   },
   created () {
@@ -97,6 +118,9 @@ export default {
       this.setOrdersDataArrayMutation(orderData)
       this.setData4OrdersTimeDistributionAction(orderData)
       this.setData4OrdersPriceCategoryDistributionAction(orderData)
+      this.setData4PopularStoresAction(orderData)
+      // this.setInitialTagsArrayMutation(this.getTagsArray)
+      this.setData4PopularTagsAction(orderData)
       iterator++
       if (iterator >= numRepititionsInOneS) {
         clearInterval(repeatGetInitialOrdersData)
@@ -108,6 +132,8 @@ export default {
       this.setOrdersDataArrayMutation(orderData)
       this.setData4OrdersTimeDistributionAction(orderData)
       this.setData4OrdersPriceCategoryDistributionAction(orderData)
+      this.setData4PopularStoresAction(orderData)
+      // this.setData4PopularTagsAction(orderData)
     }, millisecondsToAddOrders)
   }
 }
