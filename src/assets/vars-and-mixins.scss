@@ -32,3 +32,14 @@ $mostImportant-graph-height: calc(100vh - #{$distribution-graph-height} - #{$ver
   font-size: $fontSizeH2Titles;
   font-weight: normal;
 }
+@mixin buttons {
+  color: white;
+  background-color: $mainColor4Text;
+  padding: .5em 1.5em;
+  border-radius: .3em;
+  height: 2em;
+  font-size: 1em;
+  cursor: pointer;
+  border-style: none;
+  width: 196px;
+}

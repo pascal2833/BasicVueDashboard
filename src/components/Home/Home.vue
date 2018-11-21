@@ -1,14 +1,22 @@
 <template>
     <div class="home">
-      <h1 class="h1-titles">Orders information dashboard</h1>
+      <dashboard-header
+        class="dashboard-header"
+        mainTitle="Orders information dashboard"
+      >
+      </dashboard-header>
       <div class="graphsInSameRowContainer">
         <distribution-graph
           graphTitle="Orders time distribution"
+          idSvg="svgElement1"
+          :data="data4OrdersTimeDistribution"
         >
         </distribution-graph>
         <div class="horizontal-graphs-margin"></div>
         <distribution-graph
           graphTitle="Price distribution per category"
+          idSvg="svgElement2"
+          :data="data4OrdersPriceCategoryDistribution"
         >
         </distribution-graph>
       </div>
@@ -28,6 +36,7 @@
           graphTitle="Most popular tags:"
         >
         </mostImportant-graph>
+        {{ordersDataArray}}
       </div>
     </div>
 </template>
@@ -36,7 +45,9 @@
 
 import DistributionGraph from '../DistributionGraph/DistributionGraph'
 import MostImportantGraph from '../MostImportantGraph/MostImportantGraph'
-import { mapMutations, mapState } from 'vuex'
+import DashboardHeader from '../DashboardHeader/DashboardHeader'
+
+import { mapMutations, mapActions, mapState, mapGetters } from 'vuex'
 import { generateOrder } from '../../services/getOrdersData'
 
 export default {
@@ -47,16 +58,26 @@ export default {
   },
   components: {
     DistributionGraph,
-    MostImportantGraph
+    MostImportantGraph,
+    DashboardHeader
   },
   computed: {
     ...mapState({
-      ordersDataArray: state => state.ordersDataArray
-    })
+      ordersDataArray: state => state.ordersDataArray,
+      data4OrdersTimeDistribution: state => state.data4OrdersTimeDistribution,
+      data4OrdersPriceCategoryDistribution: state => state.data4OrdersPriceCategoryDistribution
+    }),
+    ...mapGetters([
+    ])
   },
   methods: {
     ...mapMutations([
-      'setOrdersDataArrayMutation'
+      'setOrdersDataArrayMutation',
+      'setDrawGraphsWithNewDataMutation'
+    ]),
+    ...mapActions([
+      'setData4OrdersTimeDistributionAction',
+      'setData4OrdersPriceCategoryDistributionAction'
     ])
   },
   created () {
@@ -67,14 +88,19 @@ export default {
     const repeatGetInitialOrdersData = setInterval(() => {
       const orderData = generateOrder(new Date())
       this.setOrdersDataArrayMutation(orderData)
+      this.setData4OrdersTimeDistributionAction(this.ordersDataArray)
       iterator++
       if (iterator >= numRepititionsInOneS) {
         clearInterval(repeatGetInitialOrdersData)
+        this.setDrawGraphsWithNewDataMutation(true)
+        this.setData4OrdersPriceCategoryDistributionAction(this.ordersDataArray)
       }
     }, millisecondsToCreateInitialOrders)
-    setInterval(() => { // Add one order each ...seconds.
+    setInterval(() => { // Add one order each X seconds.
       const orderData = generateOrder(new Date())
       this.setOrdersDataArrayMutation(orderData)
+      this.setData4OrdersTimeDistributionAction(this.ordersDataArray)
+      this.setData4OrdersPriceCategoryDistributionAction(this.ordersDataArray)
     }, millisecondsToAddOrders)
   }
 }

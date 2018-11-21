@@ -24,8 +24,8 @@ let data = require('./data')
 
 const generateOrder = (now) => {
   // Start time between now and 10 minutes ago
-  let startTime = getRandomStartTime(now)
-  let endTime = getRandomEndTime(startTime)
+  let startTime = new Date(getRandomStartTime(now))
+  let endTime = new Date(getRandomEndTime(startTime))
   let category = getRandomCategory()
   let store = getRandomStore(category)
   let amount = getRandomAmount()

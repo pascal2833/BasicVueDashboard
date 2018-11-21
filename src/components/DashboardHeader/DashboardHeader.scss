@@ -1,0 +1,14 @@
+@import '../../assets/vars-and-mixins';
+
+.dashboard-header{
+  display: flex;
+  justify-content: space-between;
+  .h1-titles {
+    margin: 0 0 $globalVerticalMargin 0;
+    font-size: $fontSizeH1Titles;
+    font-weight: normal;
+  }
+  .classic-button {
+    @include buttons;
+  }
+}

@@ -7,11 +7,6 @@
   height: calc(100vh - #{$globalVerticalMargin}*2);
   margin: $globalVerticalMargin $globalHorizontalMargin;
   color: $mainColor4Text;
-  .h1-titles {
-    margin: 0 0 $globalVerticalMargin 0;
-    font-size: $fontSizeH1Titles;
-    font-weight: normal;
-  }
   .horizontal-graphs-margin {
     width: $horizontalMarginBetweenGraph;
   }
