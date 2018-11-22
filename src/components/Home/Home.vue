@@ -119,10 +119,16 @@ export default {
         this.setDrawGraphsWithNewDataMutation()
       }
     }, millisecondsToCreateInitialOrders)
-    setInterval(() => { // Add one order each X seconds.
+    // Add one order each X seconds:
+    setInterval(() => {
       const orderData = generateOrder(new Date())
       this.setData4AllGraphs(orderData)
     }, millisecondsToAddOrders)
+    // Refresh automaticaly each 2':
+    setInterval(() => {
+      console.log('Refresh automaticaly !!!')
+      this.setDrawGraphsWithNewDataMutation()
+    }, 2 * 1000 * 60)
   }
 }
 </script>

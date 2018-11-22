@@ -41,7 +41,8 @@ export default {
       const widthSvg = window.document.getElementById(this.idSvgContainer).offsetWidth
       const heightSvg = window.document.getElementById(this.idSvgContainer).offsetHeight
       const margin = ({top: 6, right: 0, bottom: 45, left: 65})
-      const dataMax = d3.max(data.map(function (d) { return d.yAxeData }))
+      const dataMin = d3.min(data.map(d => d.yAxeData))
+      const dataMax = d3.max(data.map(d => d.yAxeData))
 
       const svg = d3.select(`#${this.idSvg}`)
 
@@ -51,7 +52,7 @@ export default {
         .range([margin.left, widthSvg - margin.left - margin.right])
         .padding(0.7)
       const yScale = d3.scaleLinear()
-        .domain([0, d3.max(data, d => d.yAxeData)]).nice()
+        .domain([dataMin, dataMax]).nice()
         .range([heightSvg - margin.bottom, margin.top])
 
       // Add graph and axes:
@@ -60,9 +61,9 @@ export default {
         .attr('fill', this.graphColor)
         .attr('x', d => xScale(d.xAxeData))
         .attr('y', d => yScale(d.yAxeData))
-        .attr('height', d => yScale(0) - yScale(d.yAxeData))
+        .attr('height', d => yScale(dataMin) - yScale(d.yAxeData))
         .attr('width', xScale.bandwidth())
-        .attr('opacity', d => d.yAxeData / dataMax + 0.1)
+        .attr('opacity', d => d.yAxeData / (dataMax + 1))
 
       const xAxis = g => g
         .attr('transform', `translate(0,${heightSvg - margin.bottom})`)
@@ -97,6 +98,8 @@ export default {
   },
   watch: {
     drawGraphsWithNewData: function () {
+      const svg = d3.select(`#${this.idSvg}`)
+      svg.selectAll('*').remove()
       this.drawGraph(this.data)
     }
   }
