@@ -1,8 +1,9 @@
 .distribution-graph {
   width: 50%;
   position: relative;
+  height: 50vh;
   border: solid 1px #9b9ba0;
-  height: 50vh; }
+  border-radius: .3em; }
 
 .distribution-graph__h2-titles {
   margin: 0.5em 0;

@@ -1,8 +1,9 @@
 .mostImportant-graph {
   width: calc(100%/3);
   height: calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em);
+  margin-top: 1em;
   border: solid 1px #9b9ba0;
-  margin-top: 1em; }
+  border-radius: .3em; }
 
 .mostImportant-graph__h2-titles {
   margin: 0.5em 0;
@@ -15,6 +16,36 @@
   text-align: center; }
 
 .mostImportant-graph__comparison-section {
-  display: flex; }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; }
+
+.mostImportant-graph__comparison-section__circles {
+  position: relative;
+  border: solid 2px #32960a;
+  border-radius: 100%;
+  background-color: #64c864;
+  max-width: 500px;
+  min-width: .7em;
+  max-height: 500px;
+  min-height: .7em;
+  margin-top: 1em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.circle-size-1 {
+  width: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/3);
+  height: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/3); }
+
+.circle-size-2 {
+  width: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/5);
+  height: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/5); }
+
+.circle-size-3 {
+  width: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/7);
+  height: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/7); }
 
 /*# sourceMappingURL=MostImportantGraph.css.map */

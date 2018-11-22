@@ -26,5 +26,12 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-TODO: 
+TODO:
+- Graph ne doivent s'actualiser que quand :
+  - initie
+  - Apres 2'
+  - Refresh.
 - refactor / function in state: put in a service.
+- Add state dans local Store
+- Change heurres / orders times, plus logique.
+- Mettre pour distribution intensite de couleurs f(valeurs)

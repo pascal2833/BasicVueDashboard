@@ -3,5 +3,5 @@ export { setDrawGraphsWithNewDataMutation } from './setDrawGraphsWithNewDataMuta
 export { setData4OrdersTimeDistributionMutation } from './setData4OrdersTimeDistributionMutation'
 export { setData4OrdersPriceCategoryDistributionMutation } from './setData4OrdersPriceCategoryDistributionMutation'
 export { setData4PopularStoresMutation } from './setData4PopularStoresMutation'
-export { setInitialTagsArrayMutation } from './setInitialTagsArrayMutation'
 export { setData4PopularTagsMutation } from './setData4PopularTagsMutation'
+export { setData4MorePaymentStoresMutation } from './setData4MorePaymentStoresMutation'

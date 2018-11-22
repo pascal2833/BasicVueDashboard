@@ -3,8 +3,8 @@
 .distribution-graph {
   width: $distribution-graph-width;
   position: relative;
-  border: $graphs-borders;
   height: $distribution-graph-height;
+  @include graphs-borders;
 }
 .distribution-graph__h2-titles {
   @include h2-titles;

@@ -1,16 +1,13 @@
 import data from '../services/data'
 
-const getCategoriesArray = () => {
+const getData4OrdersPriceCategoryDistribution = () => {
   const categoriesArray = []
   for (let key in data) {
     if (data.hasOwnProperty(key)) {
       categoriesArray.push(key)
     }
   }
-  return categoriesArray
-}
-const getData4OrdersPriceCategoryDistribution = () => {
-  return getCategoriesArray().map(category => {
+  return categoriesArray.map(category => {
     const object = {xAxeData: category, yAxeData: 0} // xAxeData = categories, yAxeData = Price.
     return object
   })
@@ -34,25 +31,8 @@ const getData4MostPopularStores = () => {
   })
 }
 
-/* const getTagsArray = () => {
-  const tagsArray = []
-  for (let key in data) {
-    if (data.hasOwnProperty(key)) {
-      for (let i = 0; i < data[key].length; i++) {
-        tagsArray.push(data[key][i].tags)
-      }
-    }
-  }
-  return tagsArray
-} */
-
 const getData4MostPopularTags = () => {
-  /* return getTagsArray().map(tag => {
-    const object = {dataName: tag, dataQuantity: 0}
-    return object
-  }) */
   const tagsArray = []
-
   for (let key in data) {
     if (data.hasOwnProperty(key)) {
       for (let i = 0; i < data[key].length; i++) {
@@ -76,5 +56,6 @@ export const state = {
   data4OrdersTimeDistribution: [{xAxeData: '0-6h', yAxeData: 0}, {xAxeData: '6-12h', yAxeData: 0}, {xAxeData: '12-18h', yAxeData: 0}, {xAxeData: '18-24h', yAxeData: 0}], // xAxeData = timeZone, yAxeData = numOrders.
   data4OrdersPriceCategoryDistribution: getData4OrdersPriceCategoryDistribution(), // [{}, {}, ...]
   data4PopularStores: getData4MostPopularStores(),
+  data4MorePaymentStores: getData4MostPopularStores(),
   data4PopularTags: getData4MostPopularTags()
 }

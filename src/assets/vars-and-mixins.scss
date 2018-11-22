@@ -9,8 +9,6 @@ $graphPadding: 1.5em;
 
 $mainColor4Text: rgb(155,155,160);
 
-$graphs-borders: solid 1px $mainColor4Text;
-
 // --------------- Others var: --------------- //
 $fontSizeH1Titles: 1.5em;
 $fontSizeH2Titles: 1.3em;
@@ -47,4 +45,9 @@ $mostImportant-graph-height: calc(100vh - #{$distribution-graph-height} - #{$ver
   border-style: none;
   width: 196px;
   margin-right: 1em;
+}
+
+@mixin graphs-borders {
+  border: solid 1px $mainColor4Text;
+  border-radius: .3em;
 }

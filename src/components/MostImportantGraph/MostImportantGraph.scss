@@ -3,8 +3,8 @@
 .mostImportant-graph {
   width: $mostImportant-graph-width;
   height: $mostImportant-graph-height;
-  border: $graphs-borders;
   margin-top: $verticalMarginBetweenGraph;
+  @include graphs-borders;
 }
 
 .mostImportant-graph__h2-titles {
@@ -13,4 +13,36 @@
 
 .mostImportant-graph__comparison-section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.mostImportant-graph__comparison-section__circles {
+  position: relative;
+  border: solid 2px rgb(50, 150, 10);
+  border-radius: 100%;
+  background-color: rgb(100, 200, 100);
+  max-width: 500px;
+  min-width: .7em;
+  max-height: 500px;
+  min-height: .7em;
+  margin-top: 1em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-size-1 {
+  width: calc(#{$mostImportant-graph-height}/3);
+  height: calc(#{$mostImportant-graph-height}/3);
+}
+.circle-size-2 {
+  width: calc(#{$mostImportant-graph-height}/5);
+  height: calc(#{$mostImportant-graph-height}/5);
+}
+.circle-size-3 {
+  width: calc(#{$mostImportant-graph-height}/7);
+  height: calc(#{$mostImportant-graph-height}/7);
 }

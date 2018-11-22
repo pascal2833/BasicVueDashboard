@@ -2,6 +2,8 @@ import * as actions from './actions/'
 import * as mutations from './mutations/'
 import { state } from './state'
 
+import { compareBasedOnNumber } from '../services/compareMethods4MostImportantGraph'
+
 export default {
   state,
   mutations: {
@@ -10,37 +12,21 @@ export default {
   actions: {
     ...actions
   },
-  getters: {
-    getData4PopularStoresOrdered: state => {
-      const compareBaseOnNumber = (a, b) => {
-        const elementA = a['dataQuantity']
-        const elementB = b['dataQuantity']
-        let comparison = 0
-        if (elementA > elementB) {
-          comparison = -1
-        } else if (elementA < elementB) {
-          comparison = 1
-        }
-        return comparison
-      }
-      return state.data4PopularStores.sort(compareBaseOnNumber)
+  getters: { // TODO: Used param/getters to no repeat?
+    getData4PopularStoresFiltered: state => {
+      const arrayOrdered = state.data4PopularStores.slice().sort(compareBasedOnNumber)
+      const arrayFiltered = arrayOrdered.slice(0, 3)
+      return arrayFiltered
+    },
+    getData4MorePaymentStoresFiltered: state => {
+      const arrayOrdered = state.data4MorePaymentStores.slice().sort(compareBasedOnNumber)
+      const arrayFiltered = arrayOrdered.slice(0, 3)
+      return arrayFiltered
+    },
+    getData4PopularTagsFiltered: state => {
+      const arrayOrdered = state.data4PopularTags.slice().sort(compareBasedOnNumber)
+      const arrayFiltered = arrayOrdered.slice(0, 3)
+      return arrayFiltered
     }
-    /* getData4PopularTagsOrdered: state => {
-      const getTagsArray = () => {
-        const tagsArray = []
-        for (let key in data) {
-          if (data.hasOwnProperty(key)) {
-            for (let i = 0; i < data[key].length; i++) {
-              tagsArray.push(data[key][i].store)
-            }
-          }
-        }
-        return getTagsArray
-      }
-      return getTagsArray().map(tag => {
-        const object = {dataName: tag, dataQuantity: 0}
-        return object
-      })
-    } */
   }
 }
