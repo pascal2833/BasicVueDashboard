@@ -20,7 +20,7 @@ export default {
     yAxeLegend: String,
     xAxeLegend: String,
     data: Array,
-    colorArray4Graphs: Array
+    graphColor: String
   },
   data () {
     return {
@@ -40,7 +40,8 @@ export default {
     drawGraph (data) {
       const widthSvg = window.document.getElementById(this.idSvgContainer).offsetWidth
       const heightSvg = window.document.getElementById(this.idSvgContainer).offsetHeight
-      const margin = ({top: 6, right: 0, bottom: 40, left: 65})
+      const margin = ({top: 6, right: 0, bottom: 45, left: 65})
+      const dataMax = d3.max(data.map(function (d) { return d.yAxeData }))
 
       const svg = d3.select(`#${this.idSvg}`)
 
@@ -56,11 +57,12 @@ export default {
       // Add graph and axes:
       svg.append('g')
         .selectAll('rect').data(data).enter().append('rect')
-        .attr('fill', (d, index) => this.colorArray4Graphs[index])
+        .attr('fill', this.graphColor)
         .attr('x', d => xScale(d.xAxeData))
         .attr('y', d => yScale(d.yAxeData))
         .attr('height', d => yScale(0) - yScale(d.yAxeData))
         .attr('width', xScale.bandwidth())
+        .attr('opacity', d => d.yAxeData / dataMax + 0.1)
 
       const xAxis = g => g
         .attr('transform', `translate(0,${heightSvg - margin.bottom})`)
@@ -80,7 +82,7 @@ export default {
       // Add Axes titles:
       svg.append('text')
         .attr('x', -(heightSvg / 2) - margin.bottom)
-        .attr('y', margin.left / 3)
+        .attr('y', margin.left / 3.5)
         .attr('transform', 'rotate(-90)')
         .attr('font-size', this.size4TitlesAxes)
         .attr('fill', this.color4TitlesAxes)

@@ -12,7 +12,7 @@
           yAxeLegend="Num of orders"
           xAxeLegend="Time period"
           :data="data4OrdersTimeDistribution"
-          :colorArray4Graphs="colorArray4Graphs"
+          graphColor="rgb(56,140,56)"
         >
         </distribution-graph>
         <div class="home__horizontal-graphs-margin"></div>
@@ -23,7 +23,7 @@
           yAxeLegend="Total prices"
           xAxeLegend="Categories"
           :data="data4OrdersPriceCategoryDistribution"
-          :colorArray4Graphs="colorArray4Graphs"
+          graphColor="rgb(249,223,5)"
         >
         </distribution-graph>
       </div>
@@ -32,18 +32,21 @@
         <mostImportant-graph
           graphTitle="Most popular stores"
           :data="getData4PopularStoresFiltered"
+          classComplement="popular-stores"
         >
         </mostImportant-graph>
         <div class="home__horizontal-graphs-margin"></div>
         <mostImportant-graph
-          graphTitle="Most popular gross payment stores"
+          graphTitle="Most gross payment stores (Euro)"
           :data="getData4MorePaymentStoresFiltered"
+          classComplement="gross-payment-stores"
         >
         </mostImportant-graph>
         <div class="home__horizontal-graphs-margin"></div>
         <mostImportant-graph
           graphTitle="Most popular tags"
           :data="getData4PopularTagsFiltered"
+          classComplement="popular-tags"
         >
         </mostImportant-graph>
       </div>
@@ -61,11 +64,6 @@ import { generateOrder } from '../../services/getOrdersData'
 
 export default {
   name: 'Home',
-  data () {
-    return {
-      colorArray4Graphs: ['#3366cc', '#dc3912', '#ff9900', '#109618', '#990099', '#0099c6', '#dd4477', '#66aa00', '#b82e2e', '#316395', '#994499', '#22aa99', '#aaaa11', '#6633cc', '#e67300', '#8b0707', '#651067', '#329262', '#5574a6', '#3b3eac'] // http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d
-    }
-  },
   components: {
     DistributionGraph,
     MostImportantGraph,
@@ -118,7 +116,7 @@ export default {
       iterator++
       if (iterator >= numRepititionsInOneS) {
         clearInterval(repeatGetInitialOrdersData)
-        this.setDrawGraphsWithNewDataMutation(true)
+        this.setDrawGraphsWithNewDataMutation()
       }
     }, millisecondsToCreateInitialOrders)
     setInterval(() => { // Add one order each X seconds.

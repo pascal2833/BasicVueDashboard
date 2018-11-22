@@ -13,7 +13,6 @@
 .distribution-graph__svgContainer {
   width: 100%;
   position: relative;
-  // border: solid 1px red;
   height: calc(#{$distribution-graph-height} - #{$fontSizeH2Titles} - #{$verticalMarginH2Titles} * 2 - #{$verticalMarginBetweenGraph});
 }
 

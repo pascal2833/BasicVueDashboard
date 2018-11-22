@@ -18,5 +18,8 @@
   border-style: none;
   width: 196px;
   margin-right: 1em; }
+  .dashboard-header__classic-button:hover {
+    background-color: #f9df05;
+    color: #388c38; }
 
 /*# sourceMappingURL=DashboardHeader.css.map */

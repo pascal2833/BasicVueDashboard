@@ -51,7 +51,7 @@ const getData4MostPopularTags = () => {
 }
 
 export const state = {
-  drawGraphsWithNewData: false,
+  drawGraphsWithNewData: 0,
   ordersDataArray: [],
   data4OrdersTimeDistribution: [{xAxeData: '0-6h', yAxeData: 0}, {xAxeData: '6-12h', yAxeData: 0}, {xAxeData: '12-18h', yAxeData: 0}, {xAxeData: '18-24h', yAxeData: 0}], // xAxeData = timeZone, yAxeData = numOrders.
   data4OrdersPriceCategoryDistribution: getData4OrdersPriceCategoryDistribution(), // [{}, {}, ...]

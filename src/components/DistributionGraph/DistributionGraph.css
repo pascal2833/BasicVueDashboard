@@ -1,7 +1,7 @@
 .distribution-graph {
   width: 50%;
   position: relative;
-  height: 50vh;
+  height: 36vh;
   border: solid 1px #9b9ba0;
   border-radius: .3em; }
 
@@ -18,11 +18,11 @@
 .distribution-graph__svgContainer {
   width: 100%;
   position: relative;
-  height: calc(50vh - 1.3em - 0.5em * 2 - 1em); }
+  height: calc(36vh - 1.3em - 0.5em * 2 - 1em); }
 
 .distribution-graph__svgContainer__svgElement {
   width: 100%;
   position: relative;
-  height: calc(50vh - 1.3em - 0.5em * 2 - 1em); }
+  height: calc(36vh - 1.3em - 0.5em * 2 - 1em); }
 
 /*# sourceMappingURL=DistributionGraph.css.map */

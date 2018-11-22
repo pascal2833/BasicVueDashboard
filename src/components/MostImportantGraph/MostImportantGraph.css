@@ -1,6 +1,6 @@
 .mostImportant-graph {
   width: calc(100%/3);
-  height: calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em);
+  height: calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em);
   margin-top: 1em;
   border: solid 1px #9b9ba0;
   border-radius: .3em; }
@@ -23,29 +23,48 @@
 
 .mostImportant-graph__comparison-section__circles {
   position: relative;
-  border: solid 2px #32960a;
   border-radius: 100%;
-  background-color: #64c864;
+  margin-top: .7em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5em;
+  color: #6e6e73; }
+
+.popular-stores {
+  border: solid 4px #388c38; }
+
+.gross-payment-stores {
+  border: solid 4px #9b9ba0; }
+
+.popular-tags {
+  border: solid 4px #f9df05; }
+
+.circle-size-1 {
+  width: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/3.3);
+  height: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/3.3);
+  max-width: 500px;
+  min-width: .7em;
+  max-height: 500px;
+  min-height: .7em; }
+
+.circle-size-2 {
+  width: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/4.3);
+  height: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/4.3);
   max-width: 500px;
   min-width: .7em;
   max-height: 500px;
   min-height: .7em;
-  margin-top: 1em;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.circle-size-1 {
-  width: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/3);
-  height: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/3); }
-
-.circle-size-2 {
-  width: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/5);
-  height: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/5); }
+  opacity: .8; }
 
 .circle-size-3 {
-  width: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/7);
-  height: calc(calc(100vh - 50vh - 1em - 0.8em * 3 - 1.5em)/7); }
+  width: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/6);
+  height: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/6);
+  max-width: 500px;
+  min-width: .7em;
+  max-height: 500px;
+  min-height: .7em;
+  opacity: .6; }
 
 /*# sourceMappingURL=MostImportantGraph.css.map */
