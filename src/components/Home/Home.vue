@@ -12,7 +12,7 @@
           yAxeLegend="Num of orders"
           xAxeLegend="Time period"
           :data="data4OrdersTimeDistribution"
-          graphColor="rgb(56,140,56)"
+          graphColor="rgb(30,160,125)"
         >
         </distribution-graph>
         <div class="home__horizontal-graphs-margin"></div>
@@ -23,7 +23,7 @@
           yAxeLegend="Total prices"
           xAxeLegend="Categories"
           :data="data4OrdersPriceCategoryDistribution"
-          graphColor="rgb(249,223,5)"
+          graphColor="rgb(254,205,56)"
         >
         </distribution-graph>
       </div>

@@ -5,12 +5,19 @@
         <meta charset="utf-8">
         <!--Only if mobile adapt needing:-->
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <style type="text/css">
+          @font-face {
+            font-family: 'MyWebFont';
+            src: url('webfont.eot'); /* IE9 Compat Modes */
+            src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+            url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+            url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+            url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+          }
             html {
               box-sizing: border-box;
-              font-size: 0.875em;
-              font-family: 'Lato', sans-serif;
+              font-size: 1em;
             }
             *
             ::before,
@@ -20,6 +27,7 @@
             body {
                 margin: 0;
                 padding: 0;
+                font-family: 'GothamBook.ttf', Fallback, sans-serif;
             }
         </style>
         <title>Super title!!!</title>

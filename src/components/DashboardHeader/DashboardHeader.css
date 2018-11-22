@@ -9,17 +9,17 @@
 
 .dashboard-header__classic-button {
   color: white;
-  background-color: #9b9ba0;
+  background-color: #a0a0a0;
   padding: .5em 1.5em;
   border-radius: .3em;
   height: 34px;
-  font-size: 1.1em;
+  font-size: 1em;
   cursor: pointer;
   border-style: none;
   width: 196px;
   margin-right: 1em; }
   .dashboard-header__classic-button:hover {
-    background-color: #f9df05;
-    color: #388c38; }
+    background-color: #fecd38;
+    color: #1ea07d; }
 
 /*# sourceMappingURL=DashboardHeader.css.map */

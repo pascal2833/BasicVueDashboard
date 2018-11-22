@@ -7,10 +7,10 @@ $horizontalMarginBetweenGraph: 1em;
 
 $graphPadding: 1.5em;
 
-$mainColor4Text: rgb(155,155,160);
+$mainColor4Text: rgb(160,160,160);
 
-$color1_4Graphs: rgb(56,140,56);
-$color2_4Graphs: rgb(249,223,5);
+$color1_4Graphs: rgb(30,160,125);
+$color2_4Graphs: rgb(254,205,56);
 
 // --------------- Others var: --------------- //
 $fontSizeH1Titles: 1.5em;
@@ -43,18 +43,18 @@ $mostImportant-graph-height: calc(100vh - #{$distribution-graph-height} - #{$ver
   padding: .5em 1.5em;
   border-radius: .3em;
   height: 34px;
-  font-size: 1.1em;
+  font-size: 1em;
   cursor: pointer;
   border-style: none;
   width: 196px;
   margin-right: 1em;
   &:hover {
-    background-color: rgb(249,223,5);
+    background-color: $color2_4Graphs;
     color: $color1_4Graphs;
   }
 }
 
 @mixin graphs-borders {
-  border: solid 1px $mainColor4Text;
-  border-radius: .3em;
+  // border: solid 1px $mainColor4Text;
+  // border-radius: .3em;
 }

@@ -1,9 +1,7 @@
 .mostImportant-graph {
   width: calc(100%/3);
   height: calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em);
-  margin-top: 1em;
-  border: solid 1px #9b9ba0;
-  border-radius: .3em; }
+  margin-top: 1em; }
 
 .mostImportant-graph__h2-titles {
   margin: 0.5em 0;
@@ -33,13 +31,13 @@
   color: #6e6e73; }
 
 .popular-stores {
-  border: solid 4px #388c38; }
+  border: solid 4px #1ea07d; }
 
 .gross-payment-stores {
-  border: solid 4px #9b9ba0; }
+  border: solid 4px #a0a0a0; }
 
 .popular-tags {
-  border: solid 4px #f9df05; }
+  border: solid 4px #fecd38; }
 
 .circle-size-1 {
   width: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/3.3);

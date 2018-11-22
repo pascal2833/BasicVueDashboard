@@ -52,7 +52,7 @@ export default {
         .range([margin.left, widthSvg - margin.left - margin.right])
         .padding(0.7)
       const yScale = d3.scaleLinear()
-        .domain([dataMin, dataMax]).nice()
+        .domain([dataMin, dataMax])
         .range([heightSvg - margin.bottom, margin.top])
 
       // Add graph and axes:

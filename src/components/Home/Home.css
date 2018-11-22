@@ -3,7 +3,7 @@
   flex-direction: column;
   height: calc(100vh - 0.8em*2);
   margin: 0.8em 0.8em;
-  color: #9b9ba0; }
+  color: #a0a0a0; }
 
 .home__graphsInSameRowContainer {
   display: flex; }
