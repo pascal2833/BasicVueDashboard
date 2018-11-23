@@ -27,13 +27,12 @@ $mostImportant-graph-height: calc(100vh - #{$distribution-graph-height} - #{$ver
 // ----------- Responsive touch: ---------------- //
 // Gnal:
 $min4_mobiles: 320px;
-$max4_mobiles: 480px;
-$min4_tablets: 481px;
+$max4_mobiles: 590px;
+$min4_tablets: 591px;
 $max4_tablets: 1024px;
 $min4_desktops: 1025px;
 // Distribution-graphs:
 $distribution-graph-width_desktop: 50%;
-$distribution-graph-width_tablets: 75%;
 $distribution-graph-width_mobiles: 100%;
 // --------------- MostImportant-graph var: --------------- //
 $mostImportant-graph-width_desktops: calc(100%/3);

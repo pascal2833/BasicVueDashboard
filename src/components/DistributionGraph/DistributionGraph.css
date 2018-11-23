@@ -22,11 +22,12 @@
   position: relative;
   height: calc(36vh - 1.3em - 0.5em * 2 - 1em); }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 590px) {
   .distribution-graph {
     width: 100%; } }
-@media screen and (min-width: 481px) and (max-width: 1024px) {
-  width: 75%; }
+@media screen and (min-width: 591px) and (max-width: 1024px) {
+  .distribution-graph {
+    width: 100%; } }
 @media screen and (min-width: 1025px) {
   .distribution-graph {
     width: 50%; } }

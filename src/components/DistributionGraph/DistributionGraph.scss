@@ -31,7 +31,9 @@
 
 // Tablets:
 @media screen and (min-width: $min4_tablets) and (max-width: $max4_tablets) {
-  width: $distribution-graph-width_tablets;
+  .distribution-graph {
+    width:  $distribution-graph-width_mobiles;
+  }
 }
 
 // Desktops:

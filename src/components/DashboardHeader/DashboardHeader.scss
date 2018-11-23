@@ -22,7 +22,6 @@
     font-size: 1.1em;
     font-weight: bold;
   }
-
   .dashboard-header__button-container__button  {
     width: 100%;
     font-weight: bold;
@@ -32,8 +31,17 @@
 // Tablets:
 @media screen and (min-width: $min4_tablets) and (max-width: $max4_tablets) {
   .dashboard-header{
+    align-items: center;
+    margin-bottom: 1.6em;
+    width: 100%;
   }
   .dashboard-header__h1-titles {
+    margin: 0 .6em 0 0;
+    font-size: 1.3em;
+  }
+  .dashboard-header__button-container__button  {
+    width: 100%;
+    font-weight: bold;
   }
 }
 

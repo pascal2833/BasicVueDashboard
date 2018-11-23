@@ -43,9 +43,6 @@ export default {
       const margin = ({top: 6, right: 0, bottom: 48, left: 65})
       const dataMin = Math.floor(d3.min(data.map(d => d.yAxeData)))
       const dataMax = Math.ceil(d3.max(data.map(d => d.yAxeData)))
-
-      console.log(dataMin, dataMax)
-
       const svg = d3.select(`#${this.idSvg}`)
 
       // Scales definition:
@@ -65,7 +62,7 @@ export default {
         .attr('y', d => yScale(d.yAxeData))
         .attr('height', d => yScale(dataMin) - yScale(d.yAxeData))
         .attr('width', xScale.bandwidth())
-        .attr('opacity', d => d.yAxeData / (dataMax + 1))
+        .attr('opacity', d => d.yAxeData / dataMax + 0.1)
 
       const xAxis = g => g
         .attr('transform', `translate(0,${heightSvg - margin.bottom})`)
@@ -73,7 +70,8 @@ export default {
           .tickSizeOuter(0))
       const yAxis = g => g
         .attr('transform', `translate(${margin.left},0)`)
-        .call(d3.axisLeft(yScale))
+        .call(d3.axisLeft(yScale)
+          .tickSizeOuter(0))
 
       svg.append('g')
         .call(xAxis)

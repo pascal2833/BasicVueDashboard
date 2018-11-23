@@ -28,7 +28,7 @@
         </distribution-graph>
       </div>
 
-      <div class="home__graphsInSameRowContainer">
+      <div class="home__graphsInSameRowContainer mostImportant-graph">
         <mostImportant-graph
           graphTitle="Most popular stores"
           :data="getData4PopularStoresFiltered"
