@@ -2,24 +2,40 @@
   display: flex;
   justify-content: space-between; }
 
-.dashboard-header__h1-titles {
-  margin: 0 0 0.8em 1em;
-  font-size: 1.5em;
-  font-weight: normal; }
-
-.dashboard-header__classic-button {
+.dashboard-header__button-container__button {
   color: white;
   background-color: #a0a0a0;
   padding: .5em 1.5em;
   border-radius: .3em;
-  height: 34px;
   font-size: 1em;
   cursor: pointer;
-  border-style: none;
-  width: 196px;
-  margin-right: 1em; }
-  .dashboard-header__classic-button:hover {
+  border-style: none; }
+  .dashboard-header__button-container__button:hover {
     background-color: #fecd38;
     color: #1ea07d; }
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .dashboard-header {
+    align-items: center;
+    margin-bottom: 1.6em; }
+
+  .dashboard-header__h1-titles {
+    margin: 0 .6em 0 0;
+    font-size: 1.1em;
+    font-weight: bold; }
+
+  .dashboard-header__button-container__button {
+    width: 100%;
+    font-weight: bold; } }
+@media screen and (min-width: 1025px) {
+  .dashboard-header__h1-titles {
+    margin: 0 0 0.8em 1em;
+    font-size: 1.5em;
+    font-weight: normal; }
+
+  .dashboard-header__button-container__button {
+    margin-right: 1em;
+    height: 34px;
+    width: 196px; } }
 
 /*# sourceMappingURL=DashboardHeader.css.map */

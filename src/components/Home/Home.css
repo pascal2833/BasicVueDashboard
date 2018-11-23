@@ -1,7 +1,5 @@
 .home {
   display: flex;
-  flex-direction: column;
-  height: calc(100vh - 0.8em*2);
   margin: 0.8em 0.8em;
   color: #a0a0a0; }
 
@@ -10,5 +8,22 @@
 
 .home__horizontal-graphs-margin {
   width: 1em; }
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .home {
+    flex-wrap: wrap; }
+
+  .home__graphsInSameRowContainer {
+    width: 100%;
+    flex-direction: column;
+    align-items: center; } }
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .home {
+    height: calc(100vh - 0.8em*2);
+    flex-direction: column; } }
+@media screen and (min-width: 1025px) {
+  .home {
+    height: calc(100vh - 0.8em*2);
+    flex-direction: column; } }
 
 /*# sourceMappingURL=Home.css.map */

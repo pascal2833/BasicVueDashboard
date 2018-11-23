@@ -4,12 +4,49 @@
   display: flex;
   justify-content: space-between;
 }
-.dashboard-header__h1-titles {
-  margin: 0 0 $globalVerticalMargin 1em;
-  font-size: $fontSizeH1Titles;
-  font-weight: normal;
+
+.dashboard-header__button-container__button  {
+  @include buttons;
 }
 
-.dashboard-header__classic-button  {
-  @include buttons;
+// ------- Responsivity: ----------- //
+
+// Mobiles:
+@media screen and (min-width: $min4_mobiles) and (max-width: $max4_mobiles) {
+  .dashboard-header{
+    align-items: center;
+    margin-bottom: 1.6em;
+  }
+  .dashboard-header__h1-titles {
+    margin: 0 .6em 0 0;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  .dashboard-header__button-container__button  {
+    width: 100%;
+    font-weight: bold;
+  }
+}
+
+// Tablets:
+@media screen and (min-width: $min4_tablets) and (max-width: $max4_tablets) {
+  .dashboard-header{
+  }
+  .dashboard-header__h1-titles {
+  }
+}
+
+// Desktops:
+@media screen and (min-width: $min4_desktops) {
+  .dashboard-header__h1-titles {
+    margin: 0 0 $globalVerticalMargin 1em;
+    font-size: $fontSizeH1Titles;
+    font-weight: normal;
+  }
+  .dashboard-header__button-container__button  {
+    margin-right: 1em;
+    height: 34px;
+    width: 196px;
+  }
 }

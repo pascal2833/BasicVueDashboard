@@ -1,10 +1,8 @@
 @import "../../assets/vars-and-mixins";
 
 .distribution-graph {
-  width: $distribution-graph-width;
   position: relative;
   height: $distribution-graph-height;
-  @include graphs-borders;
 }
 .distribution-graph__h2-titles {
   @include h2-titles;
@@ -20,4 +18,25 @@
   width: 100%;
   position: relative;
   height: calc(#{$distribution-graph-height} - #{$fontSizeH2Titles} - #{$verticalMarginH2Titles} * 2 - #{$verticalMarginBetweenGraph});
+}
+
+// ------- Responsivity: ----------- //
+
+// Mobiles:
+@media screen and (min-width: $min4_mobiles) and (max-width: $max4_mobiles) {
+  .distribution-graph {
+    width:  $distribution-graph-width_mobiles;
+  }
+}
+
+// Tablets:
+@media screen and (min-width: $min4_tablets) and (max-width: $max4_tablets) {
+  width: $distribution-graph-width_tablets;
+}
+
+// Desktops:
+@media screen and (min-width: $min4_desktops) {
+  .distribution-graph {
+    width: $distribution-graph-width_desktop;
+  }
 }

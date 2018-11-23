@@ -2,8 +2,6 @@
 
 .home {
   display: flex;
-  flex-direction: column;
-  height: calc(100vh - #{$globalVerticalMargin}*2);
   margin: $globalVerticalMargin $globalHorizontalMargin;
   color: $mainColor4Text;
 }
@@ -14,4 +12,34 @@
 
 .home__horizontal-graphs-margin {
   width: $horizontalMarginBetweenGraph;
+}
+
+// ------- Responsivity: ----------- //
+
+// Mobiles:
+@media screen and (min-width: $min4_mobiles) and (max-width: $max4_mobiles) {
+  .home {
+    flex-wrap: wrap;
+  }
+  .home__graphsInSameRowContainer {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+// Tablets:
+@media screen and (min-width: $min4_tablets) and (max-width: $max4_tablets) {
+  .home {
+    height: calc(100vh - #{$globalVerticalMargin}*2);
+    flex-direction: column;
+  }
+}
+
+// Desktops:
+@media screen and (min-width: $min4_desktops) {
+  .home {
+    height: calc(100vh - #{$globalVerticalMargin}*2);
+    flex-direction: column;
+  }
 }
