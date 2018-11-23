@@ -106,7 +106,7 @@ export default {
     }
   },
   created () {
-    const millisecondsToCreateInitialOrders = 75 // Time to repeat
+    const millisecondsToCreateInitialOrders = 200 // Time to repeat
     const millisecondsToAddOrders = 1000 * 20 // We assume that each 20' an order is created.
     const numRepititionsInOneS = 1000 / millisecondsToCreateInitialOrders // If we want 1s to create initial orders.
     let iterator = 0
@@ -125,10 +125,10 @@ export default {
       this.setData4AllGraphs(orderData)
     }, millisecondsToAddOrders)
     // Refresh automaticaly each 2':
-    setInterval(() => {
+    /* setInterval(() => {
       console.log('Refresh automaticaly !!!')
       this.setDrawGraphsWithNewDataMutation()
-    }, 2 * 1000 * 60)
+    }, 2 * 1000 * 60) */
     // Turn to do graph when resize window:
     window.addEventListener('resize', () => {
       this.setDrawGraphsWithNewDataMutation()

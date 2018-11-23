@@ -41,8 +41,10 @@ export default {
       const widthSvg = window.document.getElementById(this.idSvgContainer).offsetWidth
       const heightSvg = window.document.getElementById(this.idSvgContainer).offsetHeight
       const margin = ({top: 6, right: 0, bottom: 48, left: 65})
-      const dataMin = d3.min(data.map(d => d.yAxeData))
-      const dataMax = d3.max(data.map(d => d.yAxeData))
+      const dataMin = Math.floor(d3.min(data.map(d => d.yAxeData)))
+      const dataMax = Math.ceil(d3.max(data.map(d => d.yAxeData)))
+
+      console.log(dataMin, dataMax)
 
       const svg = d3.select(`#${this.idSvg}`)
 
