@@ -50,7 +50,7 @@ function getRandomStore (category) {
 }
 
 function getRandomStartTime (now) {
-  return now - getRandomInt(0, 10) * 60 * 1000
+  return now - getRandomInt(0, 500) * 60 * 1000 * 24
 }
 
 function getRandomEndTime (startTime) {

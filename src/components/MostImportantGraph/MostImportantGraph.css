@@ -43,19 +43,11 @@
 .circle-size-2 {
   width: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/4.3);
   height: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/4.3);
-  max-width: 500px;
-  min-width: .7em;
-  max-height: 500px;
-  min-height: .7em;
   opacity: .65; }
 
 .circle-size-3 {
   width: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/6);
   height: calc(calc(100vh - 36vh - 1em - 0.8em * 3 - 1.5em)/6);
-  max-width: 500px;
-  min-width: .7em;
-  max-height: 500px;
-  min-height: .7em;
   opacity: .5; }
 
 @media screen and (min-width: 320px) and (max-width: 590px) {

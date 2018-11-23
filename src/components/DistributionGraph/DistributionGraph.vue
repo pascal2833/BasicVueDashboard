@@ -45,6 +45,14 @@ export default {
       const dataMax = Math.ceil(d3.max(data.map(d => d.yAxeData)))
       const svg = d3.select(`#${this.idSvg}`)
 
+      // Define number of ticks / y:
+      let numTicks = 5
+      for (let i = 1; i <= 5; i++) {
+        if ((dataMax - dataMin) >= i) {
+          numTicks = i
+        }
+      }
+
       // Scales definition:
       const xScale = d3.scaleBand()
         .domain(data.map(d => d.xAxeData))
@@ -71,6 +79,8 @@ export default {
       const yAxis = g => g
         .attr('transform', `translate(${margin.left},0)`)
         .call(d3.axisLeft(yScale)
+          .ticks(numTicks)
+          .tickFormat(d3.format('d'))
           .tickSizeOuter(0))
 
       svg.append('g')
