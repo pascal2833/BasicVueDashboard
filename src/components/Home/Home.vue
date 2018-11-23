@@ -10,7 +10,7 @@
           idSvg="svgElement1"
           idSvgContainer="svgContainer1"
           yAxeLegend="Num of orders"
-          xAxeLegend="Time period"
+          xAxeLegend="Time periods"
           :data="data4OrdersTimeDistribution"
           graphColor="rgb(30,160,125)"
         >
@@ -20,7 +20,7 @@
           graphTitle="Price distribution per category"
           idSvg="svgElement2"
           idSvgContainer="svgContainer2"
-          yAxeLegend="Total prices"
+          yAxeLegend="Total prices (Euro)"
           xAxeLegend="Categories"
           :data="data4OrdersPriceCategoryDistribution"
           graphColor="rgb(254,205,56)"

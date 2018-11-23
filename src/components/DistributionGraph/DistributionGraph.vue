@@ -40,7 +40,7 @@ export default {
     drawGraph (data) {
       const widthSvg = window.document.getElementById(this.idSvgContainer).offsetWidth
       const heightSvg = window.document.getElementById(this.idSvgContainer).offsetHeight
-      const margin = ({top: 6, right: 0, bottom: 45, left: 65})
+      const margin = ({top: 6, right: 0, bottom: 48, left: 65})
       const dataMin = d3.min(data.map(d => d.yAxeData))
       const dataMax = d3.max(data.map(d => d.yAxeData))
 
@@ -49,7 +49,7 @@ export default {
       // Scales definition:
       const xScale = d3.scaleBand()
         .domain(data.map(d => d.xAxeData))
-        .range([margin.left, widthSvg - margin.left - margin.right])
+        .range([margin.left, widthSvg - margin.right])
         .padding(0.7)
       const yScale = d3.scaleLinear()
         .domain([dataMin, dataMax])
@@ -82,14 +82,14 @@ export default {
 
       // Add Axes titles:
       svg.append('text')
-        .attr('x', -(heightSvg / 2) - margin.bottom)
-        .attr('y', margin.left / 3.5)
+        .attr('x', -(heightSvg / 2) - margin.bottom - margin.top)
+        .attr('y', margin.left / 4)
         .attr('transform', 'rotate(-90)')
         .attr('font-size', this.size4TitlesAxes)
         .attr('fill', this.color4TitlesAxes)
         .text(this.yAxeLegend)
       svg.append('text')
-        .attr('x', widthSvg / 2 - margin.left - margin.right)
+        .attr('x', (widthSvg - margin.left - margin.right) / 2)
         .attr('y', heightSvg - 3)
         .attr('font-size', this.size4TitlesAxes)
         .attr('fill', this.color4TitlesAxes)
