@@ -72,16 +72,4 @@ function getRandomInt (min, max) {
   return Math.floor(Math.random() * (max - min)) + min // The maximum is exclusive and the minimum is inclusive
 }
 
-/* app
-  .use(router.routes())
-  .use(cors())
-  .use(async ctx => {
-    ctx.body = 'Hello World'
-  })
-
-app.listen(3000, (err) => {
-  console.log(`listening to port 3000`)
-  console.log(err)
-}) */
-
 export { generateOrder }
