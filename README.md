@@ -8,13 +8,13 @@
 
 ## Screenshots:
 #### Desktop:
-![Desktop version](/home/pascal/workSpace/www-dev/public/glovo/src/assets/dasboard_desktop.png  "Desktop version")
+![Desktop version](./src/assets/dasboard_desktop.png  "Desktop version")
 
 #### Tablet:
-![Tablet version](/home/pascal/workSpace/www-dev/public/glovo/src/assets/dasboard_tablet.png  "Desktop version")
+![Tablet version](./src/assets/dasboard_tablet.png  "Desktop version")
 
 #### Mobile:
-![Mobile version:](/home/pascal/workSpace/www-dev/public/glovo/src/assets/dasboard_mobile.png  "Mobile version")
+![Mobile version:](./src/assets/dasboard_mobile.png  "Mobile version")
 
 
 ## What I didn't do but that I would like to  do:
